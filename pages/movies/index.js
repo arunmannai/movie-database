@@ -1,5 +1,6 @@
 import axios from "axios";
 import MovieItem from "@/components/movieitem";
+import Head from "next/head";
 
 export async function getStaticProps() {
     const options = {
@@ -22,9 +23,15 @@ export async function getStaticProps() {
 }
 
 function Movies(props) {
-    return <div className="container">
-        <h1 className="text-center">Top 100 Movies</h1>
-        {props.movies.map((movie) => <MovieItem key={movie.id} movie={movie}></MovieItem>)}
-    </div>;
+    return <>
+        <Head>
+            <title>Top 100 Movies</title>
+            <meta name="description" content="Top 100 Movies" />
+        </Head> 
+        <div className="container">
+            <h1 className="text-center">Top 100 Movies</h1>
+            {props.movies.map((movie) => <MovieItem key={movie.id} movie={movie}></MovieItem>)}
+        </div>
+    </>;
 }
 export default Movies;
