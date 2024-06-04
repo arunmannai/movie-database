@@ -65,7 +65,7 @@ function SeriesDetails(props) {
                         <tr>
                             <td colSpan={2}>
                                 <div className="text-center">
-                                    <YoutubeVideo url={props.series.trailer_embed_link}></YoutubeVideo>
+                                    <YoutubeVideo url={props.series.trailer_embed_link} title={props.series.title}></YoutubeVideo>
                                 </div>
                             </td>
                         </tr>
