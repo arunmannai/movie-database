@@ -57,13 +57,13 @@ function MovieDetails(props) {
                 <table className="table">
                     <tbody>
                         <tr>
-                            <th colspan="2">{props.movie.title} ({props.movie.year})</th>
+                            <th colSpan={2}>{props.movie.title} ({props.movie.year})</th>
                         </tr>
                         <tr>
-                            <td colspan="2">{props.movie.description}</td>
+                            <td colSpan={2}>{props.movie.description}</td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td colSpan={2}>
                                 <div className="text-center">
                                     <YoutubeVideo url={props.movie.trailer_embed_link}></YoutubeVideo>
                                 </div>

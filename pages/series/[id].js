@@ -57,13 +57,13 @@ function SeriesDetails(props) {
                 <table className="table">
                     <tbody>
                         <tr>
-                            <th colspan="2">{props.series.title} ({props.series.year})</th>
+                            <th colSpan={2}>{props.series.title} ({props.series.year})</th>
                         </tr>
                         <tr>
-                            <td colspan="2">{props.series.description}</td>
+                            <td colSpan={2}>{props.series.description}</td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td colSpan={2}>
                                 <div className="text-center">
                                     <YoutubeVideo url={props.series.trailer_embed_link}></YoutubeVideo>
                                 </div>
