@@ -1,6 +1,10 @@
 import axios from "axios";
-import MovieItem from "@/components/movieitem";
 import Head from "next/head";
+import MovieItem from "@/components/movieitem";
+import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import { useState } from "react";
 
 export async function getServerSideProps() {
     const options = {
@@ -23,6 +27,11 @@ export async function getServerSideProps() {
 }
 
 function Movies(props) {
+    const [page, setPage] = useState(1);
+    const handlePageChange = (event, value) => {
+      setPage(value);
+    };
+    const movies = props.movies.slice((page - 1) * 10, page * 10);
     return <>
         <Head>
             <title>Top 100 Movies</title>
@@ -30,7 +39,13 @@ function Movies(props) {
         </Head> 
         <div className="container">
             <h1 className="text-center">Top 100 Movies</h1>
-            {props.movies.map((movie) => <MovieItem key={movie.id} movie={movie}></MovieItem>)}
+            {movies.map((movie) => <MovieItem key={movie.id} movie={movie}></MovieItem>)}
+        </div>
+        <div className="text-center my-5">
+            <Stack spacing={2}>
+                <Typography>Page: {page}</Typography>
+                <Pagination variant="outlined" shape="rounded" count={10} page={page} onChange={handlePageChange} />
+            </Stack>
         </div>
     </>;
 }

@@ -18,12 +18,17 @@
 .itemcontainer:hover {
   background-color: #ddd;
 }
+
 .category {
   width: 45%;
 }
 
+.MuiPagination-ul {
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
-.category {
-   width: 90%;
+  .category {
+    width: 90%;
   }
 }
