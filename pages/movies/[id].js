@@ -51,13 +51,13 @@ function MovieDetails(props) {
             <meta name="description" content={props.movie.description} />
         </Head>
         <div>
-            <h1 className="text-center">{props.movie.rank}. {props.movie.title}</h1>
+            <h1 className="text-center">{props.movie.rank}. {props.movie.title} ({props.movie.year})</h1>
             <img className="banner" src={props.movie.big_image}></img>
             <div className="table-responsive">
                 <table className="table">
                     <tbody>
                         <tr>
-                            <th colspan="2">{props.movie.title}</th>
+                            <th colspan="2">{props.movie.title} ({props.movie.year})</th>
                         </tr>
                         <tr>
                             <td colspan="2">{props.movie.description}</td>
@@ -70,24 +70,24 @@ function MovieDetails(props) {
                             </td>
                         </tr>
                         <tr>
-                            <th>Directors</th>
+                            <th className="text-end">Directors:</th>
                             <td>{props.movie.director}</td>
                         </tr>
                         <tr>
-                            <th>Writers</th>
+                            <th className="text-end">Writers:</th>
                             <td>{props.movie.writers}</td>
                         </tr>
                         <tr>
-                            <th>Genre</th>
-                            <td>{props.movie.genre}</td>
+                            <th className="text-end">Genre:</th>
+                            <td>{props.movie.genre.join(", ")}</td>
                         </tr>
                         <tr>
-                            <th>Rating</th>
+                            <th className="text-end">Rating:</th>
                             <td>{props.movie.rating}</td>
                         </tr>
                         <tr>
-                            <th>Imdb Link</th>
-                            <td><a href={props.movie.imdb_link} target="_blank">={props.movie.imdb_link}</a></td>
+                            <th className="text-end">Imdb Link:</th>
+                            <td><a href={props.movie.imdb_link} target="_blank">{props.movie.imdb_link}</a></td>
                         </tr>
                     </tbody>
                 </table>
