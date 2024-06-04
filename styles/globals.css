@@ -14,3 +14,13 @@
   cursor: pointer;
   background-color: #eee;
 }
+
+.category{
+  width: 45%;
+}
+
+@media (max-width: 600px) {
+.category {
+   width: 90%;
+  }
+}
