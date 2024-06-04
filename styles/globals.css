@@ -4,18 +4,21 @@
   margin-bottom: auto;
 }
 
-.banner{
+.banner {
   width: 100%;
 }
 
-.itemcontainer{
+.itemcontainer {
   border: 2px solid #ccc;
   border-radius: 10px;
   cursor: pointer;
   background-color: #eee;
 }
 
-.category{
+.itemcontainer:hover {
+  background-color: #ddd;
+}
+.category {
   width: 45%;
 }
 
