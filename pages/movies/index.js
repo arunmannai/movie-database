@@ -2,7 +2,7 @@ import axios from "axios";
 import MovieItem from "@/components/movieitem";
 import Head from "next/head";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const options = {
         method: 'GET',
         url: `https://${process.env.RAPID_API_HOST}/`,

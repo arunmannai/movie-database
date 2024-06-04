@@ -2,7 +2,7 @@ import axios from "axios";
 import YoutubeVideo from "@/components/youtubevideo";
 import Head from "next/head";
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const params = context.params;
     const options = {
         method: 'GET',
@@ -12,17 +12,24 @@ export async function getStaticProps(context) {
             'X-RapidAPI-Host': process.env.RAPID_API_HOST
          }
     };
-    
-    const res = await axios.request(options);
-    const series = res.data;
 
-    return {
-        props: {
-            series
+    try {
+        const res = await axios.request(options);
+        const series = res.data;
+        return {
+            props: {
+                series
+            }
         }
-    }
+    } catch {
+        return{
+            notFound: true
+        }
+    }  
+
 }
 
+/*
 export async function getStaticPaths() {
     const options = {
         method: 'GET',
@@ -43,6 +50,7 @@ export async function getStaticPaths() {
         fallback: false
     }
 }
+*/
 
 function SeriesDetails(props) {
     return <>
