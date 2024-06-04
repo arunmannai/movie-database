@@ -1,7 +1,16 @@
 .thumbnail {
   min-width: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .banner{
   width: 100%;
+}
+
+.itemcontainer{
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #eee;
 }

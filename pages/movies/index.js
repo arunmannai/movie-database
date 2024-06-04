@@ -24,7 +24,7 @@ export async function getStaticProps() {
 function Movies(props) {
     return <div className="container">
         <h1 className="text-center">Top 100 Movies</h1>
-        {props.movies.map((movie) => <MovieItem movie={movie}></MovieItem>)}
+        {props.movies.map((movie) => <MovieItem key={movie.id} movie={movie}></MovieItem>)}
     </div>;
 }
 export default Movies;
