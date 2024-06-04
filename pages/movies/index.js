@@ -19,11 +19,9 @@ export async function getStaticProps() {
             movies
         }
     }
-    
 }
 
 function Movies(props) {
-
     return <div className="container">
         <h1 className="text-center">Top 100 Movies</h1>
         {props.movies.map((movie) => <MovieItem movie={movie}></MovieItem>)}
